@@ -24,21 +24,21 @@ parameter tppac_corr_esi = 0 1 0 0
 
 # Parameters for the range curve, 3He or alpha
 #rangefile zrange_he3.dat
-#rangefile zrange_a.dat
+rangefile zrange_a.dat
 #rangefile zrange_d.dat
-rangefile zrange_p.dat
+#rangefile zrange_p.dat
 
 # Cut of low-energy events by making a rectangle which is excluded
 # in the down, left corner of the banana. 
 # Contains E-minimum 1, DE-minimum 1, E-minimum 2, DE-minimum 2.
 # Including Z=1 particles:
-parameter ede_rect  = 500 250 30 500
+#parameter ede_rect  = 500 250 30 500
 # Excluding Z=1 particles:
 #parameter ede_rect  = 500 2500 2000 2500
 
 # Thickness gate for proton banana
 # parameter thick_range = 82 12 0
-parameter thick_range = 125 15 0
+#parameter thick_range = 125 15 0
 # parameter thick_range = 140 20 0
 # parameter thick_range = 276 75 0
 # parameter thick_range = 230 25 0
@@ -47,11 +47,11 @@ parameter thick_range = 125 15 0
 #parameter thick_range = 48 8 0
 
 # Thickness gate for alpha banana
-#parameter thick_range = 165 10 0
+parameter thick_range = 165 10 0
 #parameter thick_range = 48 5 0
 
 # Fit of rkinz/qkinz column 1 as function of qkinz/rkinz column 6
-#  240Pu(d,p) -- REALLY CHANGE THESE TO YOUR REACTION!!!
+#  240Pu(d,p) -- REALLY CHANGE THESE TO YOUR REACTION!!! (Need to do this for U233(a,a'))
 parameter ex_from_ede    = 1.5528e+4 -9.6287e-1 -1.3943e-6 \
 1.5521e+4 -9.6197e-1 -1.4187e-6 \
 1.5514e+4 -9.6096e-1 -1.4466e-6 \
@@ -116,17 +116,14 @@ parameter ppac_efficiency = 0.48
 
 #data directory Datafiles
 # data directory /path/to/data_dir
-data directory ../239Pu/datafilesLocal
+data directory /Users/tellefs/Documents/master/datafiles-U233-2012
 
 #maximum number of buffers to read for each file; for testing
 #max_buffers 1
 
-#239Pu
+#233U
 # list all data files
-# data file sirius-20140617-file1.data
-# data file sirius-20140617-file2.data
-data file sirius-20140617-142011.data
-data file sirius-20140617-194528-big-000.data
+data file sirius-20121008-142103.data
 
 # Write to MAMA matrix 
 #export mama h_ex_f0 h_ex_f0_MAMA
@@ -135,4 +132,4 @@ export mama m_alfna alfna
 
 # at the end, spectra are dumped to the root file
 # root output file
-export root offline_Pu239_dp_001.root
+export root offline_U233_aa_001.root
